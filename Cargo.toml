@@ -4,3 +4,6 @@ version = "0.1.0"
 authors = ["Greg Cline <gregrcline@gmail.com>"]
 
 [dependencies]
+structopt = "0.2.13"
+spinners = "1.0.0"
+tap = "0.3.0"
