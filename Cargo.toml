@@ -2,8 +2,10 @@
 name = "rust_2018"
 version = "0.1.0"
 authors = ["Greg Cline <gregrcline@gmail.com>"]
+edition = "2018"
 
 [dependencies]
 structopt = "0.2.13"
 spinners = "1.0.0"
 tap = "0.3.0"
+regex = "1.1.0"

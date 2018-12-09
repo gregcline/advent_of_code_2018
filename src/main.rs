@@ -1,3 +1,4 @@
+extern crate regex;
 extern crate spinners;
 extern crate structopt;
 extern crate tap;
@@ -5,10 +6,11 @@ extern crate tap;
 use spinners::{Spinner, Spinners};
 use structopt::StructOpt;
 
-use solver::Puzzle;
+use crate::solver::Puzzle;
 
 mod day_1;
 mod day_2;
+mod day_3;
 mod solver;
 
 #[derive(StructOpt, Debug)]
@@ -23,6 +25,11 @@ enum Days {
         /// The name of the puzzle input file
         input: String,
     },
+    #[structopt(name = "day_3")]
+    Day3 {
+        /// The name of the puzzle input file
+        input: String,
+    },
 }
 
 fn main() {
@@ -30,6 +37,7 @@ fn main() {
     let solver = match opt {
         Days::Day1 { input } => Puzzle::new(&input, Box::new(day_1::Day1Solver)).unwrap(),
         Days::Day2 { input } => Puzzle::new(&input, Box::new(day_2::Day2Solver)).unwrap(),
+        Days::Day3 { input } => Puzzle::new(&input, Box::new(day_3::Day3Solver)).unwrap(),
     };
 
     let sp = Spinner::new(Spinners::Dots, "Working on part 1".into());

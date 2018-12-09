@@ -4,11 +4,14 @@ use std::io;
 use std::io::prelude::*;
 use std::io::BufReader;
 
+use day_3::Rectangle;
+
 #[derive(Debug)]
 pub enum Solution {
     I32(i32),
     USize(usize),
     String(String),
+    Rectangle(Rectangle),
 }
 
 impl fmt::Display for Solution {
@@ -17,6 +20,7 @@ impl fmt::Display for Solution {
             Solution::I32(x) => write!(f, "{}", x),
             Solution::USize(x) => write!(f, "{}", x),
             Solution::String(x) => write!(f, "{}", x),
+            Solution::Rectangle(x) => write!(f, "{}", x),
         }
     }
 }
