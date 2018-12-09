@@ -1,6 +1,5 @@
-#[macro_use]
-extern crate structopt;
 extern crate spinners;
+extern crate structopt;
 extern crate tap;
 
 use spinners::{Spinner, Spinners};
