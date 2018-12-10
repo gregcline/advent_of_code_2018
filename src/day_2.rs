@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 use std::io;
 
-use solver::{Solution, Solver};
+use crate::solver::{Solution, Solver};
 
 pub struct Day2Solver;
 

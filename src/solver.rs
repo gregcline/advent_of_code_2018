@@ -1,17 +1,18 @@
+use std::collections::HashMap;
 use std::fmt;
 use std::fs::File;
 use std::io;
 use std::io::prelude::*;
 use std::io::BufReader;
 
-use day_3::Rectangle;
+use crate::day_3::Claims;
 
 #[derive(Debug)]
 pub enum Solution {
     I32(i32),
     USize(usize),
     String(String),
-    Rectangle(Rectangle),
+    Cloth(Claims),
 }
 
 impl fmt::Display for Solution {
@@ -20,7 +21,7 @@ impl fmt::Display for Solution {
             Solution::I32(x) => write!(f, "{}", x),
             Solution::USize(x) => write!(f, "{}", x),
             Solution::String(x) => write!(f, "{}", x),
-            Solution::Rectangle(x) => write!(f, "{}", x),
+            Solution::Cloth(x) => write!(f, "{}", x),
         }
     }
 }
